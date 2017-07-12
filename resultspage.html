@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <nav id="color" class="grey darken-1" role="navigation">
+<!--     <nav id="color" class="grey darken-1" role="navigation">
         <div class="container">
             <div class="nav-wrapper"><img id="imageNav" src="assets/images/bk-1-Recovered.jpg">
                 <ul class="right">
@@ -36,7 +36,29 @@
                 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
             </div>
         </div>
-    </nav>
+    </nav> -->
+
+<nav class="grey darken-1" role="navigation">
+    <div class="container">
+      <div class="nav-wrapper"><a id="logo-container" href="#" class="brand-logo">#NightOut</a>
+        <ul class="right">
+        <li><a href="#" id="logIn">Login</a></li>
+        <li><a href="#" id="logOut">Logout</a></li>
+        <li><a href="#" id="signUp">Sign Up</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+        <li><a href="#" id="logIn">Login</a></li>
+        <li><a href="#" id="logOut">Logout</a></li>
+        <li><a href="#" id="signUp">Sign Up</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      </div>
+    </div>
+  </nav>
+
+
+
 
     <!--User Events Display Card-->
 
@@ -48,27 +70,29 @@
                 <p id="preferredCity">Philadelphia</p>
             </div>
 
-            <!--displays google Maps user inputs GOES HERE-->
-            <div id="googleMaps"></div>
-
             <!--displays Weather in city user inputs GOES HERE-->
             <div id="weather">
                 <p id="preferredWeather">50 Degrees</p>
             </div>
+
+            <!--displays google Maps user inputs GOES HERE-->
+            <div id="googleMaps">MAPS HERE</div>
+
+
             <br>
             <br>
             <p class=" center white-text text-darken-3 lighten-3">SELECT YOUR EVENTS FROM THE RESULTS BELOW</p>
             <!--EVENTS GO HERE-->
-            <div id="eventOne"></div>
-            <div id="eventTwo"></div>
-            <div id="eventThree"></div>
-            <div id="eventFour"></div>
-            <div id="eventFive"></div>
-            <div id="eventSix"></div>
-            <div id="eventSeven"></div>
-            <div id="eventEight"></div>
-            <div id="eventNine"></div>
-            <div id="eventTen"></div>
+            <div id="eventOne">1</div>
+            <div id="eventTwo">2</div>
+            <div id="eventThree">3</div>
+            <div id="eventFour">4</div>
+            <div id="eventFive">5</div>
+            <div id="eventSix">6</div>
+            <div id="eventSeven">7</div>
+            <div id="eventEight">8</div>
+            <div id="eventNine">9</div>
+            <div id="eventTen">10</div>
         </div>
     </div>
     <!--
@@ -142,10 +166,12 @@
 
     <!-- Main JQuery source-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   
+    <!-- Materialize CSS -->
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script> 
     <!-- Compiled and minified Materialize JavaScript -->
 <!--<script src="project1/assets/materialize/js/materialize.min.js"></script> -->
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+<!--     <script type="text/javascript" src="js/materialize.min.js"></script> -->
     <!-- Main Javascript Source-->
     <script src="javascript.js"></script>
 
