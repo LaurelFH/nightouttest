@@ -102,8 +102,15 @@ $("#eventBriteButton").click(function(){
 });
 
 
-//pushes data above to the eventBriteInfo div 
 
+// //sets up a prevent default for the let's go modalButton
+// $("modalButton").click(function(){
+//     event.preventDefault();
+// });
+
+
+
+//pushes data above to the eventBriteInfo div 
 // $("#zomatoButton").click(function(){
 // //f7e75efc205df5df23b8ffa670aa0e7c
 // });
@@ -126,7 +133,6 @@ $("#fourSquareFoodButton").click(function(){
 });
 
 //sets up the push of fourSquareFood content to the user
-
 // $("fourSquareFood").innerHTML();
 
 
@@ -163,7 +169,6 @@ function createMarker(place) {
 }
 
 //sets up the push of fourSquareTrends content to the user
-
 // $("fourSquareTrends").innerHTML() = ;
 
 
@@ -322,10 +327,9 @@ $("#cityInputForm").submit(function(){
 });
 
  
-
-
 //location button (let's go) 
 $("#weatherButton").click(function(){
+    event.preventDefault();
     //api.openweathermap.org/data/2.5/weather?q={city name}
     var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + userCity +
     "&units=imperial&APPID=1f696d92481f8b09a45310a970c0b486";
