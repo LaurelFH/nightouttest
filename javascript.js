@@ -92,6 +92,7 @@ $("#eventBriteButton").click(function(){
         method: "GET"
     }).done(function(data){
         console.log(data);
+        //empty the eventBrite results div  
         $("#eventBriteResults").empty();
         for (var i = 0; i < data.events.length; i++) {
             var newDiv=`<div>${data.events[i].name.html}</div>`
@@ -102,10 +103,6 @@ $("#eventBriteButton").click(function(){
 
 
 //pushes data above to the eventBriteInfo div 
-
-
-
-
 
 // $("#zomatoButton").click(function(){
 // //f7e75efc205df5df23b8ffa670aa0e7c
@@ -312,6 +309,8 @@ $("#signInGoogle").click(function(){
     });
 });
 
+
+//This call captures the city and state value from the location modal
 $("#cityInputForm").submit(function(){
     event.preventDefault();
     userCity = $("#cityInput").val().trim();
@@ -328,13 +327,6 @@ $("#cityInputForm").submit(function(){
 
 
 //location button (let's go) 
-
-
-
-
-
-
-
 $("#weatherButton").click(function(){
     //api.openweathermap.org/data/2.5/weather?q={city name}
     var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + userCity +
@@ -352,16 +344,16 @@ $("#weatherButton").click(function(){
     });
 });
 
-$("#meetUpButton").click(function(){
-    // api key for meetup 67126c723a751b543f227367b1f5954
-    var queryURL = "https://api.meetup.com/2/events?key=67126c723a751b543f227367b1f5954&group_urlname=ny-tech&sign=true";
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-         }).done(function(data){
-             console.log(data);
-         });
-});
+// $("#meetUpButton").click(function(){
+//     // api key for meetup 67126c723a751b543f227367b1f5954
+//     var queryURL = "https://api.meetup.com/2/events?key=67126c723a751b543f227367b1f5954&group_urlname=ny-tech&sign=true";
+//     $.ajax({
+//         url: queryURL,
+//         method: "GET"
+//          }).done(function(data){
+//              console.log(data);
+//          });
+// });
 
 
 // $(".dateNightButton").click(function(){
