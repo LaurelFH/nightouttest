@@ -103,10 +103,14 @@ $("#eventBriteButton").click(function(){
 });
 
 
+//pushes data above to the eventBriteInfo div 
 
-$("#zomatoButton").click(function(){
-//f7e75efc205df5df23b8ffa670aa0e7c
-});
+$("eventBriteInfo").innerHTML()=;
+
+
+// $("#zomatoButton").click(function(){
+// //f7e75efc205df5df23b8ffa670aa0e7c
+// });
 
 $("#fourSquareFoodButton").click(function(){
     var clientId = "E2ASPJ0FPTMTQUB1RGYFICEWYIGTT2NG3CJXTREL4WXGQVZO";
@@ -125,7 +129,14 @@ $("#fourSquareFoodButton").click(function(){
     });
 });
 
+//sets up the push of fourSquareFood content to the user
+
+$("fourSquareFood").innerHTML();
+
+
+
 $("#fourSquareTrendingButton").click(function(){
+
     var clientId = "E2ASPJ0FPTMTQUB1RGYFICEWYIGTT2NG3CJXTREL4WXGQVZO";
     var clientSecret = "EHEV5ED4QETVAL5QAS3EEKGBXZELL5QVG5XAPWQJY2R11HFO";
 
@@ -154,6 +165,13 @@ function createMarker(place) {
         infowindow.open(map, this);
     });
 }
+
+//sets up the push of fourSquareTrends content to the user
+
+$("fourSquareTrends").innerHTML() = ;
+
+
+
 
 $("#googlePlacesButton").click(function(){
 
@@ -193,6 +211,11 @@ $("#googlePlacesButton").click(function(){
     });
 });
 
+
+
+
+
+//event for clciking the sign-up link on th enav menu-- for now the a hrefs are # placeholders, call modal?
 $("#signUpButton").click(function(){
     var email = $("#emailInput").val().trim();
     var password = $("#passwordInput").val().trim();
@@ -204,7 +227,7 @@ $("#signUpButton").click(function(){
     });
 
 });
-
+//aka Log out on the nav menu
 $("#signOut").click(function(){
     firebase.auth().signOut().then(function() {
     // Sign-out successful.
@@ -367,34 +390,60 @@ $("#meetUpButton").click(function(){
 //   }
 // });
 
-$("#yelpButton").click(function(){
-    // Client ID
-// ImyIU6DHaqlzfq2Y-v7UPw
-// Client Secret
-// SOC31MI8AVBkGCnk6At0ScKs8qxdhl3CWtDfX7BF1OoTgSPBUbGONwhNb1i8Ozy1
+// $("#yelpButton").click(function(){
+//     // Client ID
+// // ImyIU6DHaqlzfq2Y-v7UPw
+// // Client Secret
+// // SOC31MI8AVBkGCnk6At0ScKs8qxdhl3CWtDfX7BF1OoTgSPBUbGONwhNb1i8Ozy1
 
-// $ curl -d "grant_type=client_credentials&client_id=ImyIU6DHaqlzfq2Y-v7UPw&client_secret=SOC31MI8AVBkGCnk6At0ScKs8qxdhl3CWtDfX7BF1OoTgSPBUbGONwhNb1i8Ozy1" -X POST https://api.yelp.com/oauth2/token
-// {"access_token": "8vBb2_Y61wo65MJ4u5jFEo489N4-aL6GKPYYhB8qZ59Sip_9ppmymC-Bo-j5maeBUrgT0Q78u4jTDz3LKxpm2oVq1QWOwwdfKsne69qVPidZh2Nu3dPBGRIhwylkWXYx", "expires_in": 15551999, "token_type": "Bearer"}
-    //  var token = "8vBb2_Y61wo65MJ4u5jFEo489N4-aL6GKPYYhB8qZ59Sip_9ppmymC-Bo-j5maeBUrgT0Q78u4jTDz3LKxpm2oVq1QWOwwdfKsne69qVPidZh2Nu3dPBGRIhwylkWXYx";
-    //  var queryURL = "https://api.yelp.com/v3/businesses/search/?term=food&location=Raleigh"
-    //  $.ajax({
-    //     url: queryURL,
-    //     headers: {"Authorization": "Bearer " + token}
-    // })           
-    // .done(function (data) {
-    //   console.log(data);
-    // })
-    // .fail(function (jqXHR, textStatus) {
-    //   alert("error: " + textStatus);
-    // });
+// // $ curl -d "grant_type=client_credentials&client_id=ImyIU6DHaqlzfq2Y-v7UPw&client_secret=SOC31MI8AVBkGCnk6At0ScKs8qxdhl3CWtDfX7BF1OoTgSPBUbGONwhNb1i8Ozy1" -X POST https://api.yelp.com/oauth2/token
+// // {"access_token": "8vBb2_Y61wo65MJ4u5jFEo489N4-aL6GKPYYhB8qZ59Sip_9ppmymC-Bo-j5maeBUrgT0Q78u4jTDz3LKxpm2oVq1QWOwwdfKsne69qVPidZh2Nu3dPBGRIhwylkWXYx", "expires_in": 15551999, "token_type": "Bearer"}
+//     //  var token = "8vBb2_Y61wo65MJ4u5jFEo489N4-aL6GKPYYhB8qZ59Sip_9ppmymC-Bo-j5maeBUrgT0Q78u4jTDz3LKxpm2oVq1QWOwwdfKsne69qVPidZh2Nu3dPBGRIhwylkWXYx";
+//     //  var queryURL = "https://api.yelp.com/v3/businesses/search/?term=food&location=Raleigh"
+//     //  $.ajax({
+//     //     url: queryURL,
+//     //     headers: {"Authorization": "Bearer " + token}
+//     // })           
+//     // .done(function (data) {
+//     //   console.log(data);
+//     // })
+//     // .fail(function (jqXHR, textStatus) {
+//     //   alert("error: " + textStatus);
+//     // });
 
-    // $.ajax({
-    // url      : 'http://api.yelp.com/business_review_search',
-    // dataType : 'jsonp',
-    // data     : {term : 'restaurant', lat : xxx, long : xxx}, // callback is not necessary
-    // success  : function(data) {
-    //     // data is a normal response shown on yelp's API page
-    //     console.log(data)
-    // }
-    // });
-});
+//     // $.ajax({
+//     // url      : 'http://api.yelp.com/business_review_search',
+//     // dataType : 'jsonp',
+//     // data     : {term : 'restaurant', lat : xxx, long : xxx}, // callback is not necessary
+//     // success  : function(data) {
+//     //     // data is a normal response shown on yelp's API page
+//     //     console.log(data)
+//     // }
+//     // });
+// });
+
+//////////////////////TASKS//////////////////////
+// Attach events to the login buttons/out buttons (,ake sure the ids match all of them)
+// hamburger button for the nav bar?
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
