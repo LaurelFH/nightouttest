@@ -1,4 +1,4 @@
-//This is the final jaavscript page for the NIGHTOUT application 
+//This is the final javascript page for the NIGHTOUT application 
 
 
 
