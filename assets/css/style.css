@@ -110,8 +110,8 @@ footer {
 =================Modal Styling ====================
 =========================================================*/
 
-#modal1 {
-    background: url("../images/holder-image.png")no-repeat center center fixed;
+#modalLocation {
+    background: url("../images/locationImage.jpeg")no-repeat center center fixed;
     background-size: cover;
     color: whitesmoke;
     border-radius: 15px;
@@ -125,4 +125,13 @@ footer {
 
 #modalButton {
     margin-right: 320px;
+}
+
+#modallogin{
+
+    background: url("../images/holder-image.png")no-repeat center center fixed;
+    background-size: cover;
+    color: whitesmoke;
+    border-radius: 15px;    
+
 }
