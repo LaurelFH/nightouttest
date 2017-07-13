@@ -1,5 +1,5 @@
 //This is the final javascript page for the NIGHTOUT application 
-//triggers the carousel function 
+//triggers the carousel function on the landing page 
 $(document).ready(function () {
 
     // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
@@ -167,8 +167,6 @@ function createMarker(place) {
 // $("fourSquareTrends").innerHTML() = ;
 
 
-
-
 $("#googlePlacesButton").click(function(){
 
     var geocoder = new google.maps.Geocoder();
@@ -211,7 +209,7 @@ $("#googlePlacesButton").click(function(){
 
 
 
-//event for clciking the sign-up link on th enav menu-- for now the a hrefs are # placeholders, call modal?
+//event for clicking the sign-up link on the nav menu-- for now the a hrefs are # placeholders, call modal?
 $("#signUpButton").click(function(){
     var email = $("#emailInput").val().trim();
     var password = $("#passwordInput").val().trim();
@@ -323,7 +321,7 @@ $("#cityInputForm").submit(function(){
     }
 });
 
-//function to grab the value from the cityInput box and pass through the weather api  
+ 
 
 
 //location button (let's go) 
