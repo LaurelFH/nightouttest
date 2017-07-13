@@ -1,7 +1,4 @@
 //This is the final javascript page for the NIGHTOUT application 
-
-
-
 //triggers the carousel function 
 $(document).ready(function () {
 
@@ -105,6 +102,8 @@ $("#eventBriteButton").click(function(){
 
 
 //pushes data above to the eventBriteInfo div 
+
+
 
 
 
