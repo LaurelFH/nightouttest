@@ -26,7 +26,6 @@ $(document).ready(function () {
 
 });
 
-
 //firebase config with key
 
 var config = {
