@@ -57,6 +57,7 @@ function printUserCity() {
     $("#weather").html("");
 }
 
+//firebase call with this 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
@@ -105,7 +106,6 @@ $("#eventBriteButton").click(function(){
 
 //pushes data above to the eventBriteInfo div 
 
-$("eventBriteInfo").innerHTML()=;
 
 
 // $("#zomatoButton").click(function(){
@@ -131,7 +131,7 @@ $("#fourSquareFoodButton").click(function(){
 
 //sets up the push of fourSquareFood content to the user
 
-$("fourSquareFood").innerHTML();
+// $("fourSquareFood").innerHTML();
 
 
 
@@ -168,7 +168,7 @@ function createMarker(place) {
 
 //sets up the push of fourSquareTrends content to the user
 
-$("fourSquareTrends").innerHTML() = ;
+// $("fourSquareTrends").innerHTML() = ;
 
 
 
@@ -325,6 +325,17 @@ $("#cityInputForm").submit(function(){
     }
 });
 
+//function to grab the value from the cityInput box and pass through the weather api  
+
+
+//location button (let's go) 
+
+
+
+
+
+
+
 $("#weatherButton").click(function(){
     //api.openweathermap.org/data/2.5/weather?q={city name}
     var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + userCity +
@@ -352,8 +363,6 @@ $("#meetUpButton").click(function(){
              console.log(data);
          });
 });
-
-
 
 
 // $(".dateNightButton").click(function(){
