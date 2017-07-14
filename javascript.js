@@ -331,7 +331,7 @@ $("#cityInputForm").submit(function(){
 $("#weatherButton").click(function(){
     event.preventDefault();
     //api.openweathermap.org/data/2.5/weather?q={city name}
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + userCity +
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + userCity +
     "&units=imperial&APPID=1f696d92481f8b09a45310a970c0b486";
     $.ajax({
         url: queryURL,
@@ -341,7 +341,7 @@ $("#weatherButton").click(function(){
         console.log(data.main.temp);
         console.log(data.weather[0].description);
         //http://openweathermap.org/img/w/10d.png
-        var weatherHtml = `The weather is ${data.main.temp} F <img src='http://openweathermap.org/img/w/${data.weather[0].icon}.png' alt='${data.weather[0].description}'>`;
+        var weatherHtml = `The weather is ${data.main.temp} F <img src='https://openweathermap.org/img/w/${data.weather[0].icon}.png' alt='${data.weather[0].description}'>`;
         $("#weather").html(weatherHtml);
     });
 });
