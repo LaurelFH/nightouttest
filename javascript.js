@@ -93,7 +93,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 // });
 
 //captures the userCity information from the let's go button to pass through the weather api
-
 $("#modalButton").click(function(){
     event.preventDefault();
     //make a new variable called usercity based on the the trimmed value of the "city input" box
