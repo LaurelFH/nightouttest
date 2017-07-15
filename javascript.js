@@ -113,19 +113,6 @@ $("#modalButton").click(function(){
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // eventbrite button will show events in selected cities when button is clicked
 $("#eventBriteButton").click(function(){
     var token = "R6QQVF4RQTZXWE5XVPC5";
