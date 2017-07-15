@@ -14,25 +14,27 @@
 </head>
 
 <body>
-    <!--information for the navigation bar-->
-<nav class="grey darken-1" role="navigation">
-    <div class="container">
-      <div class="nav-wrapper"><a id="logo-container" href="#" class="brand-logo">#NightOut</a>
-        <ul class="right">
-        <li><a href="#" id="logIn">Login</a></li>
-        <li><a href="#" id="signOut">Logout</a></li>
-        <li><a href="#" id="signUpButton">Sign Up</a></li>
-        </ul>
 
-        <ul id="nav-mobile" class="side-nav">
-        <li><a href="#" id="logIn">Login</a></li>
-        <li><a href="#" id="signOut">Logout</a></li>
-        <li><a href="#" id="signUpButton">Sign Up</a></li>
-        </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-      </div>
-    </div>
-  </nav>
+  <!--updates from kurt 7/14-->
+     <!--information for the navigation bar-->
+    <nav id="navContainer" class="grey darken-1" role="navigation">
+        <div class="container">
+            <div class="nav-wrapper"><img id="logo-container" href="#" src="../nightouttest/assets/images/bk-1-Recovered.jpg" class="brand-logo">
+                <ul class="right">
+                    <li><a class="btn modal-trigger" data-target="modal1" href="#" id="logIn">Login</a></li>
+                    <li><a href="#" id="logOut">LOGOUT</a></li>
+                    <li><a href="#" id="signUp">SIGN UP</a></li>
+                </ul>
+
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a class="btn modal-trigger" data-target="modal1" href="#" id="logIn">Login</a></li>
+                    <li><a href="#" id="logOut">Logout</a></li>
+                    <li><a href="#" id="signUp">Sign Up</a></li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+            </div>
+        </div>
+    </nav>
 
 
     <!--   Icon Section   -->
@@ -80,48 +82,73 @@
             </div>
         </div>
 
-        <!-- Modal Structure -->
-<!--         <div id="modalLocation" class="modal modal-fixed-footer">
-            <div class="modal-content">
-                <h4>Enter Your City</h4>
-                <div class="row">
-                    <form class="col s12">
-                        <div class="row modal-form-row">
-                            <div class="input-field col s6">
-                                <input id="cityInput" type="text" class="validate">
-                                <label for="cityInput">Location</label>
-                            </div>
-                        </div>
-                    </form>
-                </div> -->
-
 <!--modal for the location confirmation-->
         <div id="modalLocation" class="modal modal-fixed-footer">
             <div class="modal-content">
                 <h4>Enter Your City</h4>
                 <div class="row">
-                    <form class="col s12" id="cityInputForm">
+                <form id ="cityInputForm">
+                  <!--   <form class="col s12" id="cityInputForm"> -->
                         <div class="row modal-form-row">
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input value="Raleigh, NC" id="cityInput" type="text" class="validate">
-                                    <label class="active" for="cityInput"></label>
-                                </div>
+                                <label class="active" for="cityInput"></label>
+                                <!--textbox to record the cityInput-->
+                                    <input type="text" id="cityInput" placeholder="City, State"><!--removed the class=:validate"-->
+                                    
+                               </div>
+
                             </div>
+                        
+                                       <!--New submit button-->
+                <button class="btn waves-effect waves-light" id="modalButton" type="submit" name="action">Let's Go<i class="material-icons right">send</i></button>
+
                         </div>
                     </form>
                 </div>
-            <!--     <div class="modal-footer center"> -->
-               <!--  <a id="modalButton" class="modal-action modal-close waves-effect waves-red btn-flat" href="resultspage.html">Let's Go!</a> -->
 
-                <!--New submit button-->
-                <button class="btn waves-effect waves-light" id="weatherButton" type="submit" name="action"><a href="resultspage.html"> Let's Go </a><i class="material-icons right">send</i></button>
+             
 
                 <!--  </div> -->
             </div>
             <br><br>
         </div>
+    <!--7/14 update from kurt-->
+        <!--User Events Display Card-->
 
+        <div class="section black">
+            <div id="holder" class="row container">
+
+                <!--displays the city user inputs GOES HERE-->
+                <div id="city">
+                    <p id="preferredCity">Philadelphia</p>
+                </div>
+
+                <!--displays Weather in city user inputs GOES HERE-->
+                <div id="weather">
+                    <p id="preferredWeather">50 Degrees</p>
+                </div>
+
+                <!--displays google Maps user inputs GOES HERE-->
+                <div id="googleMaps"></div>
+                <p class=" center white-text text-darken-3 lighten-3" style="font-size: 30px; text-shadow: 2px 2px #1d1c1c;">SELECT YOUR EVENTS FROM THE RESULTS BELOW</p>
+        
+         <!--CLIPBOARD EVENTS GO HERE-->
+                <div class="eventContainer">
+                    <button class="eventDiv black-text" id="eventOne">1</button>
+                    <button class="eventDiv black-text" id="eventTwo">2</button>
+                    <button class="eventDiv black-text" id="eventThree">3</button>
+                    <button class="eventDiv black-text" id="eventFour">4</button>
+                    <button class="eventDiv black-text" id="eventFive">5</button>
+                    <button class="eventDiv black-text" id="eventSix">6</button>
+                    <button class="eventDiv black-text" id="eventSeven">7</button>
+                    <button class="eventDiv black-text" id="eventEight">8</button>
+                    <button class="eventDiv black-text" id="eventNine">9</button>
+                    <button class="eventDiv black-text" id="eventTen">10</button>
+                </div>
+            </div>
+        </div>
+    
 
 
              <!--    <div class="modal-footer center"> -->
@@ -130,7 +157,60 @@
             </div>
             <br><br>
         </div>
+ <!--new modal log-in info 7/14--> 
 
+        <div id="modal1" class="modal modal-fixed-footer center">
+            <div class="content">
+                <div class="title white-text" style="font-size: 60px;">Create Account</div>
+                <input id="modalEmail" type="text" placeholder="E-mail" />
+                <input id="modalPass" type="password" placeholder="Password" />
+                <br>
+                <input type="checkbox" id="rememberMe" />
+                <label for="rememberMe"></label><span class="white-text">I have read and agree to the <a href="#">Terms of Use </a>and <a href="#">Privacy Policy</a></span>
+                <br>
+                <button id="modalCreate">Create Account</button>
+                <br>
+                <br>
+                <div class="social"> <span class="white-text" style="font-size: 30px; text-shadow: 2px 2px #000;
+">Or Sign Up With Social Media</span></div>
+
+                <div class="buttons">
+                    <button id="modalFace" class="facebook"><i class="fa fa-facebook"></i>Facebook</button>
+                    <button id="modalTwit" class="twitter"><i class="fa fa-twitter"></i>Twitter</button>
+                    <button id="modalGoo" class="google"><i class="fa fa-google-plus"></i>Google</button>
+                </div>
+                <br>
+                <div class="already white-text" style="text-shadow: 2px 2px #000; font-size: 20px;">Already have an account? <a id=" modalSign " class="center " href="# ">Sign In</a></div>
+            </div>
+
+            <!-----------------
+            YO LAUREL CHECK HERE xd FIXED IT! 
+            -------------------->
+            <!-- <div class="modal-footer"> -->
+                <a class="modal-action modal-close waves-effect waves-red btn-flat ">Let's Go!</a>
+         <!--    </div> -->
+        </div>
+        <br><br>
+        </div>
+
+        <!-----------------
+        BLANK Clipboard Divs
+        -------------------->
+        <div class="clipboardContainer">
+            <img id="clipboardImage" src="assets/images/clipboard.png">
+            <div id=""></div>
+            <div id=""></div>
+            <div id=""></div>
+            <div id=""></div>
+        </div>
+
+        <!-----------------
+            YO BUTTONS
+        -------------------->
+        <div id="lastContainer" class="center">
+            <button id="done">DONE</button>
+            <button id="post">POST</button>
+        </div>
 
     </div>
      <!--Firebase link-->

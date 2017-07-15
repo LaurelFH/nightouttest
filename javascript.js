@@ -1,10 +1,11 @@
 //This is the final javascript page for the NIGHTOUT application 
 //triggers the carousel function on the landing page 
+
+//controls the carousel on the landing page/index
 $(document).ready(function () {
 
     // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
-
 
     //timer for the carousel
     $('.carousel').carousel({
@@ -16,10 +17,7 @@ $(document).ready(function () {
         $('.carousel').carousel('next');
         setTimeout(autoplay, 3500);
     }
-
-
     $('.parallax').parallax();
-
 
 });
 
@@ -53,7 +51,6 @@ function printUserCity() {
     $("#preferredCity").html("City: " + userCity);
     $("#weather").html("");
 }
-
 //firebase call with this 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -81,6 +78,54 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
+
+//This call captures the city and state value from the location modal
+// $("#cityInputForm").submit(function(){
+//     event.preventDefault();
+//     userCity = $("#cityInput").val().trim();
+//     printUserCity();
+
+//     if (firebaseUser != undefined) {
+//         database.ref("users/" + firebaseUser.uid).set({
+//             city: userCity
+//         });
+//     }
+// });
+
+//captures the userCity information from the let's go button to pass through the weather api
+
+$("#modalButton").click(function(){
+    event.preventDefault();
+    //make a new variable called usercity based on the the trimmed value of the "city input" box
+    userCity = $("#cityInput").val().trim();
+    //see what the value logged is
+    console.log(userCity);
+    //run the function Print user city to print the city in the preferred city div
+    printUserCity();
+
+    if(firebaseUser != undefined) {
+
+        database.ref("users/" + firebaseUser.uid).set({
+            city: userCity
+        })
+    }
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // eventbrite button will show events in selected cities when button is clicked
 $("#eventBriteButton").click(function(){
     var token = "R6QQVF4RQTZXWE5XVPC5";
@@ -102,19 +147,6 @@ $("#eventBriteButton").click(function(){
 });
 
 
-
-// //sets up a prevent default for the let's go modalButton
-// $("modalButton").click(function(){
-//     event.preventDefault();
-// });
-
-
-
-//pushes data above to the eventBriteInfo div 
-// $("#zomatoButton").click(function(){
-// //f7e75efc205df5df23b8ffa670aa0e7c
-// });
-
 $("#fourSquareFoodButton").click(function(){
     var clientId = "E2ASPJ0FPTMTQUB1RGYFICEWYIGTT2NG3CJXTREL4WXGQVZO";
     var clientSecret = "EHEV5ED4QETVAL5QAS3EEKGBXZELL5QVG5XAPWQJY2R11HFO";
@@ -134,8 +166,6 @@ $("#fourSquareFoodButton").click(function(){
 
 //sets up the push of fourSquareFood content to the user
 // $("fourSquareFood").innerHTML();
-
-
 
 $("#fourSquareTrendingButton").click(function(){
 
@@ -209,10 +239,6 @@ $("#googlePlacesButton").click(function(){
       }
     });
 });
-
-
-
-
 
 //event for clicking the sign-up link on the nav menu-- for now the a hrefs are # placeholders, call modal?
 $("#signUpButton").click(function(){
@@ -312,39 +338,44 @@ $("#signInGoogle").click(function(){
     });
 });
 
-
-//This call captures the city and state value from the location modal
-$("#cityInputForm").submit(function(){
-    event.preventDefault();
-    userCity = $("#cityInput").val().trim();
-    printUserCity();
-
-    if (firebaseUser != undefined) {
-        database.ref("users/" + firebaseUser.uid).set({
-            city: userCity
-        });
-    }
-});
-
  
-//location button (let's go) 
-$("#weatherButton").click(function(){
-    event.preventDefault();
-    //api.openweathermap.org/data/2.5/weather?q={city name}
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + userCity +
-    "&units=imperial&APPID=1f696d92481f8b09a45310a970c0b486";
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).done(function(data){
-        console.log(data);
-        console.log(data.main.temp);
-        console.log(data.weather[0].description);
-        //http://openweathermap.org/img/w/10d.png
-        var weatherHtml = `The weather is ${data.main.temp} F <img src='http://openweathermap.org/img/w/${data.weather[0].icon}.png' alt='${data.weather[0].description}'>`;
-        $("#weather").html(weatherHtml);
-    });
-});
+
+//updated weather api function 
+function weatherQuery()
+{
+   var queryURL = `https://api.apixu.com/v1/current.json?key=fabc133684694665aae31230171407&q=${encodeURIComponent(userCity)}`;
+   $.ajax({
+       url: queryURL
+   })
+   .done(function(data){
+       //console.log(data);
+       $("#preferredWeather").html(`${data.current.temp_f} Degrees ${data.current.condition.text}`);
+   })
+   .fail(function(jqXHR, textStatus)
+   {
+       console.log(textStatus);
+   })
+}
+
+
+//this API only uses http, it will be BLOCKED by chrome 
+// $("#weatherButton").click(function(){
+//     event.preventDefault();
+//     //api.openweathermap.org/data/2.5/weather?q={city name}
+//     var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + userCity +
+//     "&units=imperial&APPID=1f696d92481f8b09a45310a970c0b486";
+//     $.ajax({
+//         url: queryURL,
+//         method: "GET"
+//     }).done(function(data){
+//         console.log(data);
+//         console.log(data.main.temp);
+//         console.log(data.weather[0].description);
+//         //http://openweathermap.org/img/w/10d.png
+//         var weatherHtml = `The weather is ${data.main.temp} F <img src='http://openweathermap.org/img/w/${data.weather[0].icon}.png' alt='${data.weather[0].description}'>`;
+//         $("#weather").html(weatherHtml);
+//     });
+// });
 
 // $("#meetUpButton").click(function(){
 //     // api key for meetup 67126c723a751b543f227367b1f5954
