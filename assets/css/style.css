@@ -66,8 +66,9 @@ body {
 
 
 /*=======================================================
-=================index3.html Styling ====================
+=================info.html Styling ====================
 =========================================================*/
+
 
 #imageNav {
     width: 150px;
@@ -78,7 +79,11 @@ body {
 #clipboard {
     width: 10px;
     height: 300px;
+    /*color: white;*/
 }
+
+
+
 
 .section {
     background: url("../images/first-background-image.jpg")no-repeat center center fixed;
@@ -249,14 +254,33 @@ footer {
 
 #clipboardImage {
     margin-left: 220px;
+    position: absolute;
 }
 
 #lastContainer {
     padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+
 }
 
+#clipboardContainer{
+    margin-left: 220px; 
 
+}
 
+.inner{
+    position:absolute;
+    color: white;
+    z-index: 100;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 620px;
+    margin-top: 260px;
+}
 
 
 
